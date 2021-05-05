@@ -14,10 +14,6 @@ Aplicacion TODO's en linea JAMSTACK
 
 -   CRUD app
 
-## Demo
-
-[TODO App](https://simple-todo-app-mu.vercel.app/)
-
 ## Screenshots
 
 ![App Screenshot](https://github.com/kioshiokamoto/nextjs-jamstack-todo/blob/main/previews/preview.png?raw=true)
