@@ -2,8 +2,16 @@ import Head from 'next/head';
 import Navbar from '../components/Navbar';
 import Todo from '../components/Todo';
 import { table, minifyRecords } from '../utils/Airtable';
+import { useEffect } from 'react';
+import { useTodoContext } from '../contexts/TodosContext';
 
-export default function Home({ initialTodos }) {
+export default function Home({ initialTodos = [] }) {
+	const { todos, setTodos } = useTodoContext();
+	useEffect(() => {
+		if (initialTodos) {
+			setTodos(initialTodos);
+		}
+	}, []);
 	return (
 		<div className="max-w-xl m-auto p-2">
 			<Head>
@@ -13,7 +21,7 @@ export default function Home({ initialTodos }) {
 			<main>
 				<Navbar />
 				<>
-					<ul>{initialTodos && initialTodos.map((todo) => <Todo todo={todo} key={todo.id} />)}</ul>
+					<ul>{todos && todos.map((todo) => <Todo key={todo.id} todo={todo} />)}</ul>
 				</>
 			</main>
 		</div>
