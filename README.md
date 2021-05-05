@@ -2,6 +2,8 @@
 
 Aplicacion TODO's en linea JAMSTACK
 
+
+
 ## Tech Stack
 
 **Client:** Nextjs, TailwindCSS, Auth0, Airtable
@@ -12,9 +14,13 @@ Aplicacion TODO's en linea JAMSTACK
 
 -   CRUD app
 
+## Demo
+
+[TODO App](https://simple-todo-app-mu.vercel.app/)
+
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/kioshiokamoto/nextjs-jamstack-todo/blob/main/previews/preview.png?raw=true)
 
 ## Ejecutar localmente
 
@@ -45,7 +51,7 @@ Ingresar variables de entorno en .env
   AUTH0_DOMAIN=
   AUTH0_SECRET=
   AUTH0_CLIENT_ID=
-  COOKIE_SECRET=
+            =
 ```
 
 Iniciar servidor
