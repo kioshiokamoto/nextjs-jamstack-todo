@@ -7,7 +7,7 @@ import { useTodoContext } from '../contexts/TodosContext';
 import auth0 from './api/utils/auth0';
 import TodoForm from '../components/TodoForm';
 
-export default function Home({ initialTodos = [] }) {
+export default function Home({ initialTodos = [], user }) {
 	const { todos, setTodos } = useTodoContext();
 	useEffect(() => {
 		if (initialTodos) {
@@ -21,9 +21,15 @@ export default function Home({ initialTodos = [] }) {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<main>
-				<Navbar />
+				<Navbar user={user} />
 				<>
-					<TodoForm />
+					{user ? (
+						<TodoForm />
+					) : (
+						<div className="w-full px-4 py-4 my-5 text-white bg-yellow-500 rounded">
+							<h1 className="text-xl">Debes iniciar sesion para acceder a la aplicacion</h1>
+						</div>
+					)}
 					<ul>{todos && todos.map((todo) => <Todo key={todo.id} todo={todo} />)}</ul>
 				</>
 			</main>

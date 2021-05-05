@@ -7,6 +7,7 @@ export default function TodoForm() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		if(todo.trim()==='') return
 		addTodo(todo);
 		setTodo('');
 	};
@@ -22,7 +23,7 @@ export default function TodoForm() {
 					id="todo"
 					value={todo}
 					onChange={(e) => setTodo(e.target.value)}
-					placeholder="ex. Learn about authentication"
+					placeholder="ej: Aprender GraphQL"
 					className="p-2 border border-gray-200 rounded-lg appearance-none focus:outline-none focus:border-gray-500"
 				/>
 			</div>
